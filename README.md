@@ -18,4 +18,3 @@ cd SIPI_9-10
 pip install -r requirements.txt
 python app.py
 API будет доступен по адресу: http://localhost:5000/
-
