@@ -29,7 +29,7 @@
 ```bash
 git clone https://github.com/George5432-source/SIPI_9-10.git
 cd SIPI_9-10
-poetry init
+poetry install
 streamlit run main.py
 ```
 
