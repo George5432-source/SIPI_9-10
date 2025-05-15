@@ -1,19 +1,27 @@
 import streamlit as st
+from flat_model import predict_price, get_model_name, get_model_accuracy
 
-st.title("Предсказание цены квартиры")
+st.title("Предсказание стоимости квартиры")
 
-with st.form("input_data"):
-    st.subheader("Введите парамтеры жилого опомещения")
-    input_param_1 = st.text_input("Введите значение: этаж квартиры")
-    input_param_2 = st.text_input("Введите значение: количеcтво этажей в здании")
-    input_param_3 = st.text_input("Введите значение: количеcтво комнат в квартире")
-    input_param_4 = st.text_input("Введите значение: площадь квартиры (в квадратных метрах)")
-    input_param_5 = st.text_input("Введите значение: площадь кухни (в квадратных метрах)")
+level = st.number_input("Этаж", value=3)
+levels = st.number_input("Всего этажей", value=10)
+rooms = st.number_input("Количество комнат", value=2)
+area = st.number_input("Общая площадь (м²)", value=45.0)
+kitchen_area = st.number_input("Площадь кухни (м²)", value=10.0)
 
+if st.button("🔍 Предсказать цену"):
+    st.write("Кнопка нажата ✅")
+    params = {
+        "level": level,
+        "levels": levels,
+        "rooms": rooms,
+        "area": area,
+        "kitchen_area": kitchen_area
+    }
+    price = predict_price(params)
+    model_name = get_model_name()
+    accuracy = get_model_accuracy()
 
-    # Every form must have a submit button.
-    submitted = st.form_submit_button("Посчитать цену")
-    if submitted:
-        st.write("Прогноз: тут будет прогноз")
-        st.write("Метрики:")
-        st.write("Тут будут метрики")
+    st.success(f"💰 Предсказанная цена: **{price}**")
+    st.info(f"📈 Модель: {model_name}")
+    st.info(f"✅ Точность: {accuracy}")
