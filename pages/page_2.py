@@ -15,7 +15,7 @@ OPERATORS = {
 }
 
 # --- Путь к базе данных ---
-DB_PATH = os.path.join("C:/Users/admin/Documents/MIREA_U/sipi", "flats.db")
+DB_PATH = os.path.join("D:/6-ой сем/ПоргКринж", "flats.db")
 
 # --- Загрузка данных с фильтрацией ---
 def load_filtered_data(query: str, params: list):
@@ -64,7 +64,9 @@ for i, cond in enumerate(st.session_state.conditions):
 
 # --- Поиск по условиям ---
 with button_col3:
-    if st.button("🔍 Найти квартиры"):
+    filter = st.button("🔍 Найти квартиры")
+
+if filter:
         query = "SELECT * FROM flats WHERE 1=1"
         params = []
 

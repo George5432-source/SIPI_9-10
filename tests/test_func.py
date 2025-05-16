@@ -2,7 +2,7 @@ import os
 from streamlit.testing.v1 import AppTest
 
 def get_page1_app():
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "pages", "page1.py"))
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "pages", "page_1.py"))
     at = AppTest.from_file(path)
     at.run()
     return at
@@ -77,9 +77,9 @@ def test_model_name_output():
 
 
 def test_page3_distribution_plots():
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "pages", "page3.py"))
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "pages", "page_3.py"))
     at = AppTest.from_file(path)
-    at.run()
+    at.run(timeout=10)
 
     expected_subheaders = [
         "Распределение для столбца:",

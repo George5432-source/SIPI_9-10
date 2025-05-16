@@ -7,7 +7,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # --- Путь к базе данных ---
-DB_PATH = os.path.join("C:/Users/admin/Documents/MIREA_U/sipi", "flats.db")
+DB_PATH = os.path.join("D:/6-ой сем/ПоргКринж", "flats.db")
 
 # --- Функция для загрузки данных ---
 def load_data(limit=1000):

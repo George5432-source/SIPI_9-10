@@ -4,7 +4,7 @@ import sqlite3
 import os
 from unittest.mock import patch, MagicMock
 import streamlit as st
-import pages.page2 as page2  # ✅ Proper import
+import pages.page_2 as page2  # ✅ Proper import
 
 
 class TestFlatFilter(unittest.TestCase):
@@ -70,7 +70,7 @@ class TestFlatFilter(unittest.TestCase):
         st.session_state.conditions.append(("price", ">", 1000))
         self.assertIn(("price", ">", 1000), st.session_state.conditions)
 
-    @patch('pages.page2.load_filtered_data')
+    @patch('pages.page_2.load_filtered_data')
     def test_search_button_functionality(self, mock_load):
         mock_load.return_value = pd.DataFrame({
             "price": [1500],

@@ -3,8 +3,8 @@ import pandas as pd
 import os
 
 # Пути
-CSV_PATH = "C:/Users/admin/Documents/MIREA_U/sipi/input_data.csv"
-DB_PATH = "C:/Users/admin/Documents/MIREA_U/sipi/flats.db"
+CSV_PATH = "D:/6-ой сем/ПоргКринж/input_data.csv"
+DB_PATH = "D:/6-ой сем/ПоргКринж/flats.db"
 
 # Чтение CSV с указанием разделителя ";"
 df = pd.read_csv(CSV_PATH, delimiter=";")
